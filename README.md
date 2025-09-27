@@ -33,5 +33,6 @@ A 2D digital tellurion simulation of the Sun–Earth–Moon system built in **Py
 
 ```bash
 pip install matplotlib numpy
+```
 
 # Also check out: https://basavaprabhuani.github.io/projects/pytellurion
