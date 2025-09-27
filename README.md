@@ -1,6 +1,6 @@
-# PyOrrery
+# PyTellurion
 
-A 2D digital orrery simulation of the Sun–Earth–Moon system built in **Python** using **Matplotlib**. 
+A 2D digital tellurion simulation of the Sun–Earth–Moon system built in **Python** using **Matplotlib**. 
 *Note, this is not built to scale, just a visual representation.
 
 ---
