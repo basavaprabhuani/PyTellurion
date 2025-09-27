@@ -6,9 +6,6 @@ import numpy as np
 # Earth - Sun: 150,000,000 km
 # Earth - Moon: 384,000 km
 
-## TODO: Add glowing sun effect, sprinkle stars in the background, 
-## and subtly highlight axes to show mathematical nature
-
 # Create a figure and axis with black background (space theme)
 fig, ax = plt.subplots(facecolor="black")
 fig.canvas.manager.set_window_title("PyOrrery")
@@ -71,12 +68,6 @@ def animate(frame):
     y_moon = np.sin(theta_moon[frame]) * 15 + y_earth
     data_moon = np.array([x_moon, y_moon]).T
     scat_moon.set_offsets(data_moon)
-
-    # Store coordinates for later eclipse detection
-    moon_xcoordinates.append(x_moon)
-    moon_ycoordinates.append(y_moon)
-    earth_xcoordinates.append(x_earth)
-    earth_ycoordinates.append(y_earth)
 
     # Update Moon's orbital path (growing line)
     x_orbit_moon_values.append(x_moon)
