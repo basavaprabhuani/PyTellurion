@@ -3,13 +3,6 @@ import matplotlib.animation as animation
 import numpy as np
 import time
 
-# Dimensions of the Earth's orbit (for reference, not directly used in scaling): 
-# Earth - Sun: 150,000,000 km
-# Earth - Moon: 384,000 km
-
-## TODO: Add glowing sun effect, sprinkle stars in the background, 
-## and subtly highlight axes to show mathematical nature
-
 # Create a figure and axis with black background (space theme)
 fig, ax = plt.subplots(facecolor="black")
 fig.canvas.manager.set_window_title("PyTellurion")
