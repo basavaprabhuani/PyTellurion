@@ -1,14 +1,18 @@
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import numpy as np
+import time
 
 # Dimensions of the Earth's orbit (for reference, not directly used in scaling): 
 # Earth - Sun: 150,000,000 km
 # Earth - Moon: 384,000 km
 
+## TODO: Add glowing sun effect, sprinkle stars in the background, 
+## and subtly highlight axes to show mathematical nature
+
 # Create a figure and axis with black background (space theme)
 fig, ax = plt.subplots(facecolor="black")
-fig.canvas.manager.set_window_title("PyOrrery")
+fig.canvas.manager.set_window_title("PyTellurion")
 ax.set_facecolor("black")
 
 # Define angular positions for circular motion (0 to 2π radians)
@@ -50,11 +54,6 @@ for radius, color in zip(radii[::-1], colors[::-1]):
 x_orbit_moon_values = []
 y_orbit_moon_values = []
 
-moon_xcoordinates = []
-moon_ycoordinates = []
-earth_xcoordinates = []
-earth_ycoordinates = []
-
 # Function that updates Earth & Moon positions for each animation frame
 def animate(frame):
     # Earth position along its orbit
@@ -68,7 +67,7 @@ def animate(frame):
     y_moon = np.sin(theta_moon[frame]) * 15 + y_earth
     data_moon = np.array([x_moon, y_moon]).T
     scat_moon.set_offsets(data_moon)
-
+    
     # Update Moon's orbital path (growing line)
     x_orbit_moon_values.append(x_moon)
     y_orbit_moon_values.append(y_moon)
@@ -84,8 +83,7 @@ ani = animation.FuncAnimation(fig=fig, func=animate, frames=1000, interval=1)
 ax.set_xlim(-40, 200)
 ax.set_ylim(10, 220)
 ax.set_aspect('equal')          # Equal scaling on x & y axes
-ax.set_title("PyOrrery")        # Title of visualization
-fig.set_label("PyOrrery")
+ax.set_title("PyTellurion")        # Title of visualization
+fig.set_label("PyTellurion")
 plt.legend(loc="upper right")   # Legend in top-right
 plt.show()
-
